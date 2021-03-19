@@ -1,7 +1,7 @@
 package com.study.interviewmanager.service;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import com.study.interviewmanager.domain.entity.Question;
 
@@ -19,13 +19,15 @@ public interface QuestionService {
    * @param page
    * @return
    */
-  Page<Question> getQuestions(Integer questionId,Integer typeId,String content, PageRequest page);
+  Page<Question> getQuestions(Integer questionId, Integer typeId,String content, Pageable page);
 
   /**
    * 新增问题
    * @param question
    */
   void putQuestion(Question question);
+
+  void  deleteQuestion(Integer questionId);
 
 
 }

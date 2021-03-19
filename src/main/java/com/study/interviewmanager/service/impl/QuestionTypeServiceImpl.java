@@ -23,7 +23,7 @@ public class QuestionTypeServiceImpl implements QuestionTypeService {
   }
 
   @Override
-  public List<QuestionType> getAllTypes(int typeId, int parentId,
+  public List<QuestionType> getAllTypes(Integer typeId, Integer parentId,
       String typeName) {
     return questionTypeRepository.findAllType(typeId,parentId,typeName);
   }
@@ -31,5 +31,10 @@ public class QuestionTypeServiceImpl implements QuestionTypeService {
   @Override
   public void putType(QuestionType type) {
     questionTypeRepository.save(type);
+  }
+
+  @Override
+  public void deleteType(Integer typeId) {
+    questionTypeRepository.deleteById(typeId);
   }
 }

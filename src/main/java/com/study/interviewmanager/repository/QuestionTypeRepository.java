@@ -23,6 +23,6 @@ public interface QuestionTypeRepository extends JpaRepository<QuestionType,Integ
    * @return
    */
   @Query("select a from QuestionType a where (?1 is null or a.typeId = ?1) and (?2 is null or a.parentId = ?2) and (?3 is null or a.typeName like %?3%)")
-  List<QuestionType> findAllType(int typeId,int parentId,String typeName);
+  List<QuestionType> findAllType(Integer typeId, Integer parentId,String typeName);
 
 }

@@ -2,7 +2,6 @@ package com.study.interviewmanager.service;
 
 import java.util.List;
 
-import com.study.interviewmanager.domain.entity.Question;
 import com.study.interviewmanager.domain.entity.QuestionType;
 
 /**
@@ -18,9 +17,10 @@ public interface QuestionTypeService {
    * @param typeName
    * @return
    */
-  List<QuestionType> getAllTypes(int typeId,int parentId,String typeName);
+  List<QuestionType> getAllTypes(Integer typeId, Integer parentId,String typeName);
 
   void putType(QuestionType type);
 
+  void deleteType(Integer typeId);
 
 }

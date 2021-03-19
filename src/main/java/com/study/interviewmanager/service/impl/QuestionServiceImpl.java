@@ -1,7 +1,7 @@
 package com.study.interviewmanager.service.impl;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.study.interviewmanager.domain.entity.Question;
@@ -23,12 +23,17 @@ public class QuestionServiceImpl implements QuestionService {
 
   @Override
   public Page<Question> getQuestions(Integer questionId, Integer typeId, String content,
-      PageRequest page) {
+      Pageable page) {
      return questionRepository.findAllQuestions(questionId, typeId, content, page);
   }
 
   @Override
   public void putQuestion(Question question) {
     questionRepository.save(question);
+  }
+
+  @Override
+  public void deleteQuestion(Integer questionId) {
+    questionRepository.deleteById(questionId);
   }
 }
