@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/interview_manager?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
