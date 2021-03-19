@@ -23,4 +23,11 @@ public interface QuestionTypeService {
 
   void deleteType(Integer typeId);
 
+  /**
+   * 通过parentId查找其所有子孙typeId
+   * @param parentId
+   * @return
+   */
+  List<Integer> findTypeIdsByParentId(Integer parentId);
+
 }
